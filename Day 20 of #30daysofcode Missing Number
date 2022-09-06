@@ -1,0 +1,28 @@
+//Problem: Missing Number
+
+class Solution {
+    public int missingNumber(int[] nums) {
+         Set<Integer> numSet = new HashSet<Integer>();
+        // store the elements in nums
+        for (int num : nums) {
+            numSet.add(num);
+        }
+
+        int expectedNumCount = nums.length + 1;
+        // iterator the set to find the missing number
+        for (int number = 0; number < expectedNumCount; number++) {
+            if (!numSet.contains(number)) {
+                return number;
+            }
+        }
+        return -1; 
+    }
+}
+/*
+Input: nums = [3,0,1]
+Output: 2
+Explanation: n = 3 since there are 3 numbers, so all numbers 
+are in the range [0,3]. 2 is the missing number in the range 
+since it does not appear in nums.
+*/
+
