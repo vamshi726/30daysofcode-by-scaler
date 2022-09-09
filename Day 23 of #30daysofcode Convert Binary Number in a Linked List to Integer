@@ -1,0 +1,17 @@
+//Problem: Convert Binary Number in a Linked List to Integer
+
+class Solution {
+    public int getDecimalValue(ListNode head) {
+     int result = head.val;
+        while(head.next != null){
+            result = result*2 + head.next.val;
+            head = head.next;;
+        }
+        return result;   
+    }
+}
+/*
+Input: head = [1,0,1]
+Output: 5
+Explanation: (101) in base 2 = (5) in base 10
+*/
